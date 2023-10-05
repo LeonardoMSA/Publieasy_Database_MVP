@@ -17,3 +17,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 Migrate(app, db)
+
+from DatabaseProject.website.views import website
+
+app.register_blueprint(website)
