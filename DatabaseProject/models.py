@@ -1,6 +1,5 @@
-import datetime
 from DatabaseProject import db
-
+from datetime import datetime
 class Driver(db.Model):
 
     __tablename__ = 'drivers'
@@ -28,3 +27,13 @@ class Driver(db.Model):
     workInterest = db.Column(db.Boolean)
 
 
+class Anuncio(db.Model):
+
+    __tablename__ = 'anuncios'
+
+    id = db.Column(db.Integer, primary_key = True)
+    url = db.Column(db.String)
+    createDate = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
+    updateDate = db.Column(db.DateTime, nullable = False)
+    #contractId = db.Column(db.Integer, db.ForeignKey('contracts.id'), nullable = False)
+    #driverId = db.Column(db.Integer, db.ForeignKey('drivers.id'), nullable = False)
