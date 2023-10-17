@@ -36,4 +36,4 @@ class Anuncio(db.Model):
     createDate = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
     updateDate = db.Column(db.DateTime, nullable = False)
     #contractId = db.Column(db.Integer, db.ForeignKey('contracts.id'), nullable = False)
-    #driverId = db.Column(db.Integer, db.ForeignKey('drivers.id'), nullable = False)
+    driverId = db.Column(db.Integer, db.ForeignKey('drivers.id'), nullable = False)
