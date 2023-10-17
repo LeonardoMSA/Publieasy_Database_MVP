@@ -19,5 +19,8 @@ db = SQLAlchemy(app)
 Migrate(app, db)
 
 from DatabaseProject.website.views import website
+from DatabaseProject.error_pages.handlers import error_pages
 
 app.register_blueprint(website)
+app.register_blueprint(error_pages)
+
