@@ -15,11 +15,11 @@ class Driver(db.Model):
     paymentMethod = db.Column(db.String)
     soleOccupation = db.Column(db.Boolean)
     appDriverMonths = db.Column(db.Integer)
-    otherApps = db.Column(db.ARRAY(str))
+    #otherApps = db.Column(db.ARRAY(str))
     uberCategory = db.Column(db.String)
     rentalCar = db.Column(db.Boolean)
     dailyWorkTime = db.Column(db.Integer)
-    weekDays = db.Column(db.ARRAY(str))
+    #weekDays = db.Column(db.ARRAY(str))
     uberRating = db.Column(db.Float)
     totalTrips = db.Column(db.Integer)
     carModel = db.Column(db.String(64))
@@ -37,3 +37,15 @@ class Anuncio(db.Model):
     updateDate = db.Column(db.DateTime, nullable = False)
     #contractId = db.Column(db.Integer, db.ForeignKey('contracts.id'), nullable = False)
     driverId = db.Column(db.Integer, db.ForeignKey('drivers.id'), nullable = False)
+
+
+class Count(db.Model):
+
+    __tablename__ = 'count'
+
+    id = db.Column(db.Integer, primary_key=True)
+    accessCount = db.Column(db.Integer)
+
+    def __init__(self, accessCount):
+        self.id = 0
+        self.accessCount = accessCount
