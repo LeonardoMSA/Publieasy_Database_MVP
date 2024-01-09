@@ -38,6 +38,14 @@ class Anuncio(db.Model):
     #contractId = db.Column(db.Integer, db.ForeignKey('contracts.id'), nullable = False)
     driverId = db.Column(db.Integer, db.ForeignKey('drivers.id'), nullable = False)
 
+class Cliente(db.Model):
+
+    tablename = 'cliente'
+
+    cnpj = db.Column(db.String, primary_key = True)
+    nomeFantasia = db.Column(db.String(100))
+    setor = db.Column(db.String)
+
 
 class Count(db.Model):
 
