@@ -10,6 +10,8 @@ from flask_bootstrap import Bootstrap
 from itsdangerous import URLSafeTimedSerializer
 from werkzeug.security import check_password_hash, generate_password_hash
 
+from .models import db, Cliente, Contrato, Anuncio, Motorista
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -26,8 +28,6 @@ app.config['MAIL_PASSWORD'] = os.environ["PASSWORD"]
 app.config['MAIL_SERVER'] = "smtp.googlemail.com"
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_PORT'] = 587
-
-db = SQLAlchemy()
 
 Bootstrap(app)
 db.init_app(app)

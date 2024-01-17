@@ -1,6 +1,6 @@
 import os
-from DatabaseProject import app, db
-from DatabaseProject.models import Count
+from DatabaseProject import app
+from DatabaseProject.models import db
 
 if __name__ == '__main__':
 
