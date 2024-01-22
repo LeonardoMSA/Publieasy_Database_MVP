@@ -3,19 +3,22 @@
 
 /* AJUSTAR IMPORTS E VALORES GLOBAIS */
 /* NAO CONSEGUINDO TRAZER ESSES VALORES A OUTROS CSSs */
+/* TRADUZIR VALORES A REM */
 
-:root{
-    --roxo-escuro: #390F58;
-    --roxo: #8000DF;
-    --cinza-preto-escuro: #161616;
-    --preto: #000;
-    --lima: #AFE343;
-    --branco: #fff;
-    --off-white: #F5F5F5;
-    --unbounded: font-family: "Unbounded", sans-serif;
-    --inter: font-family: "Inter", sans-serif;
-    --titulo-h1: font-size: 80px;
-    --titulo-h2: font-size: 48px;
-    --titulo-h3: font-size: 28px;
-    --texto-p: font-size: 20px;
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    box-sizing: content-box;
 }
