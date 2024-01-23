@@ -22,3 +22,14 @@ img{
     margin-bottom: 100px;
     box-sizing: content-box;
 }
+
+@media (prefers-color-scheme: dark){
+    /* aqui botar as cores de fundo tema escuro */
+    /* fontes, cores, background */
+
+}
+
+@media (prefers-color-scheme: light) {
+    /* aqui botar as cores de fundo tema claro */
+    /* fontes, cores, background */
+  }

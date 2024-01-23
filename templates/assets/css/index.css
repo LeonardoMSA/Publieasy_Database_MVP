@@ -144,3 +144,64 @@ a{
 .uppercase{
     text-transform: uppercase;
 }
+
+.minutagem{
+    font-family: "Unbounded", sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    color: var(--lima);
+    text-align: center;
+}
+
+.minutagem-subtitle{
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    letter-spacing: -0.48px;
+    text-align: center;
+    margin-top: 20px;
+    color: #bdbdbd !important;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 100px auto;
+    align-items: center;
+    gap: 20px 20px;
+}
+
+.grid-card-container{
+    display: grid;
+    gap: 20px;
+}
+
+.grid-cards{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 30px;
+    padding: 40px 50px;
+    background-color: #161616;
+    max-height: 100%;
+    border-radius: 20px;
+}
+
+/* RESOLVE ALINHAMENTO POREM GAP FICA 40PX */
+/*
+.grid-cards:nth-child(2){
+    margin-top: 40px;
+} */
+
+.grid-title{
+    font-family: "Unbounded", sans-serif;
+    font-size: 28px;
+}
+
+.grid-paragraph{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #bdbdbd !important;
+}
