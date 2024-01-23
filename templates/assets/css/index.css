@@ -186,10 +186,15 @@ a{
 }
 
 /* RESOLVE ALINHAMENTO POREM GAP FICA 40PX */
-/*
+/* 
 .grid-cards:nth-child(2){
     margin-top: 40px;
 } */
+
+.performance-grid{
+    background-color: #161616;
+    border-radius: 20px;
+}
 
 .grid-title{
     font-family: "Unbounded", sans-serif;
@@ -204,4 +209,39 @@ a{
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #bdbdbd !important;
+}
+
+.container-performance-titles{
+    padding: 80px;
+    
+}
+
+.performance-title{
+    font-family: "Unbounded", sans-serif;
+    font-size: 48px;
+    color: var(--lima);
+    text-transform: uppercase;
+}
+
+.performance-subtitle-container{
+    max-width: 540px;
+    margin-top: 30px;
+}
+
+.performance-subtitle{
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    opacity: 60%;
+}
+
+.container-performance{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.container-card-titles{
+    font-family: "Unbounded", sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
 }
