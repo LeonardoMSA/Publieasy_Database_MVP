@@ -62,7 +62,7 @@ a{
 .navigation{
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
+    padding-top: 60px;
 }
 
 .initial-content{
@@ -71,7 +71,7 @@ a{
     align-items: center;
 }
 
-.slogan{
+.slogan-title{
     font-family: "Unbounded", sans-serif;
     font-size: 80px;
     font-weight: 600;
@@ -231,7 +231,8 @@ a{
 
 .performance-subtitle{
     font-family: "Inter", sans-serif;
-    font-size: 20px;
+    font-size: 28px;
+    letter-spacing: -0.48px;
     opacity: 60%;
 }
 
@@ -351,7 +352,7 @@ a{
 .form-contacts{
     display: flex;
     flex-direction: column;
-    /* gap: 5px; */
+    gap: 5px;
 }
 
 .form-contacts-individual{
@@ -398,9 +399,9 @@ a{
     outline: 0;
 }
 
-.forms-input::placeholder{
+/* .forms-input::placeholder{
 
-}
+} */
 
 .forms-inputs-div{
     display: flex;
@@ -437,6 +438,154 @@ a{
     gap: 20px;
 }
 
-.footer-container{
+.left-side-form{
+    display: flex;
+    flex-direction: column;
+    gap: 142px;
+}
 
+.footer-container{
+    background-color: #161616;
+
+}
+
+.footer-slogan-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-slogan{
+    text-transform: uppercase;
+    font-family: "Unbounded", sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.footer-subtitle{
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    opacity: 60%;
+    letter-spacing: -0.48px;
+}
+
+.footer-sm-container{
+    display: flex;
+    padding: 0 80px 100px 80px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.social-media-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.social-media-container h2{
+    margin-left: auto;
+}
+
+.social-media{
+    display: flex;
+    gap: 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    letter-spacing: -0.48px;
+}
+
+.social-media li:nth-child(even) span{
+    cursor: default;   
+}
+
+.footer{
+    position: relative;
+    overflow: hidden;
+    background-color: #161616;
+    padding: 120px 7%;
+    border-radius: 20px;
+    margin-bottom: 20px !important;
+}
+
+.footer-sm-container::after{
+    content: '';
+    position: absolute;
+    border: 2px solid #fff;
+    opacity: 10%;
+    width: 100%;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.footer-div-span{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+}
+
+.footer-span{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    letter-spacing: -0.32px;
+    opacity: 60%;
+    text-align: right;
+}
+
+header{
+    position: relative;
+}
+
+header::after{
+    content: '';
+    position: absolute;
+    vertical-align: middle;
+    top: 0;
+    width: calc(1520px + 7%);
+    left: calc((100% - (1520px + 7%))/2);
+    border-radius: 20px 20px 0 0;
+    top: 20px;
+    height: 880px;
+    z-index: -1;
+    background: linear-gradient(180deg, var(--roxo), var(--cinza-preto-escuro));
+}
+
+header::before{
+    content: '';
+    position: absolute;
+    vertical-align: middle;
+    top: 880px;
+    width: calc(1520px + 7%);
+    left: calc((100% - (1520px + 7%))/2);
+    height: 880px;
+    z-index: -1;
+    background: linear-gradient(180deg, var(--cinza-preto-escuro), #000);
+}
+
+footer{
+    position: relative;
+}
+
+footer::before{
+    content: '';
+    position: absolute;
+    vertical-align: middle;
+    top: -900px;
+    width: calc(1520px + 7%);
+    left: calc((100% - (1520px + 7%))/2);
+    border-radius: 0 0 20px 20px;
+    height: 880px;
+    z-index: -1;
+    background: linear-gradient(0deg, var(--roxo), var(--cinza-preto-escuro));
+}
+
+footer::after{
+    content: '';
+    position: absolute;
+    vertical-align: middle;
+    width: calc(1520px + 7%);
+    left: calc((100% - (1520px + 7%))/2);
+    top: calc(-900px - 880px);
+    height: 880px;
+    z-index: -1;
+    background: linear-gradient(0deg, var(--cinza-preto-escuro), #000);
 }
