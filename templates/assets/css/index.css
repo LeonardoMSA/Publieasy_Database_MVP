@@ -309,6 +309,7 @@ a{
     font-size: 20px;
     opacity: 60%;
     text-align: center;
+    
 }
 
 .form-title{
@@ -322,27 +323,35 @@ a{
 .form-subtitle{
     font-family: "Inter", sans-serif;
     font-size: 28px;
+    font-weight: 500;
     color: #000;
+    margin-top: 20px;
+    letter-spacing: -0.48px;
 }
 
 .grid-container-form{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 100px auto;
-    align-items: center;
+    align-items: start;
     gap: 20px 20px;
     background-color: #fff;
+    padding: 80px;
+    border-radius: 20px;
 }
 
 .span-form{
     color: #000;
     font-family: "Inter", sans-serif;
     font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.32px;
 }
 
 .form-contacts{
     display: flex;
     flex-direction: column;
+    /* gap: 5px; */
 }
 
 .form-contacts-individual{
@@ -352,10 +361,15 @@ a{
     letter-spacing: -0.32px;
 }
 
+.form-contacts-individual:hover{
+    text-decoration: underline;
+}
+
 .form-contacts-below{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 375px;
 }
 
 .forms-label{
@@ -363,10 +377,66 @@ a{
     font-family: "Inter", sans-serif;
     font-size: 28px;
     letter-spacing: -0.48px;
-    /* padding: ; */
 }
 
-.forms-inputs{
+.forms-label:hover{
+    cursor: text;
+}
+
+.forms-input{
+    height: 66px;
+    border-radius: 10px;
+    border: 2px #D3D3D3 solid;
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    color: #000;
+    padding-left: 10px; /* padding so you don't write right next to the input border */
+}
+
+.forms-input:focus{
+    border: 2px #000 solid;
+    outline: 0;
+}
+
+.forms-input::placeholder{
+
+}
+
+.forms-inputs-div{
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.forms-button{
+    width: 100%;
+    display: block;
+    height: 80px;
+    background-color: var(--roxo);
+    border-radius: 10px;
+    margin-top: 40px;
+    /* font */
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.48px;
+    /* border, outline, shadows */
+    outline: 0;
+    border: 0;
+    box-shadow: 0;
+}
+
+.forms-button:hover{
+    cursor: pointer;
+}
+
+.all-forms-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-container{
+
 }
