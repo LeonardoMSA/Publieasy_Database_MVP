@@ -24,6 +24,10 @@
     --texto-p: font-size: 20px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--preto);
     margin: 0;
@@ -589,3 +593,4 @@ footer::after{
     z-index: -1;
     background: linear-gradient(0deg, var(--cinza-preto-escuro), #000);
 }
+
