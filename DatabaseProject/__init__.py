@@ -2,6 +2,8 @@ import json
 import os
 from datetime import datetime
 
+import smtplib
+
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 from flask import (Flask, abort, flash, redirect, render_template, request,

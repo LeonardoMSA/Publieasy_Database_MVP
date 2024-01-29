@@ -1,11 +1,27 @@
 from flask import render_template, url_for, redirect, request, Blueprint, flash
 from DatabaseProject.models import db
 from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato
+import smtplib
+import os
 
 website = Blueprint('website', __name__)
 
-@website.route('/')
+@website.route('/', methods=['GET', 'POST'])
 def index():
+
+    if request.method == 'POST':
+        email = request.form.get('email')
+        celular = request.form.get('celular')
+        nomeEmpresa = request.form.get('nome-empresa')
+
+        msg = f"Subject: Nova solicitação de anúncio\n\nNome da empresa: {nomeEmpresa}\nEmail: {email}\nCelular: {celular}"
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login("leomenezes12345@gmail.com", "awhq soye muli ddqy ")
+        msg_encoded = msg.encode('utf-8')
+        server.sendmail("leomenezes12345@gmail.com", "lfaa2057@gmail.com", msg_encoded)
+
+
 
     client = Cliente.query.filter_by(setor='sexual').first()
 
