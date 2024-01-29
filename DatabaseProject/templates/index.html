@@ -1,12 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publieasy</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/index.css') }}">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-    <h1>{{client.setor}}</h1>
+    <header>
+        <nav class="container">
+            <ul class="navigation">
+                <li><a href="index.html"><img src="assets/images/publi-logos/publieasy.svg" alt="imagem publieasy logo"></a></li>
+                <li>
+                    <div class="motorista-div">
+                        <a class="motorista" href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank">Sou motorista</a>
+                        <a href="https://forms.gle/A2tpiHFgyftmkmxg7"><img src="assets/images/icons/arrow_outward.svg" alt=""></a>
+                    </div>
+                </li>
+            </ul>
+        </nav>    
+    </header>
+    
+    
+    <main class="container">
+        <div class="initial-content">
+            <h1 class="slogan-title">Dirigindo sua marca<br> até seu cliente</h1> <!-- maiusculo -->
+            <P class="sub-slogan">Novas soluções digitais para o mercado de mídia OOH <br>através de anúncios móveis e interativos</P>
+            <a class="botao" href="#quero-anunciar">Quero anunciar</a> <!-- DESCER SUAVE JS. -->
+        </div>
+        
+        <div class="horizontal-cards-container"> <!-- maiusculo -->
+            
+            <div class="cards-container">
+                <img class="imgs-card" src="./assets/images/icons/directions_car.svg" alt="">
+                <h3 class="card-titles">Alcance local e direcionado</h3>
+                <div class="txt-ms">
+                    <p class="card-subtitle">Seja visto por clientes locais e direcione sua mensagem para o público certo, no momento certo.</p>
+                </div>
+            </div>
+            
+            <div class="cards-container">
+                <img class="imgs-card" src="./assets/images/icons/spa.svg" alt="">
+                <h3 class="card-titles">Impacto sustentável</h3>
+                <div class="txt-ms">
+                    <p class="card-subtitle">Promova sua marca de forma responsável com nossas placas recicláveis.</p>
+                </div>
+            </div>
+            
+            <div class="cards-container">
+                <img class="imgs-card" src="./assets/images/icons/language.svg" alt="">
+                <h3 class="card-titles">Interação instântanea</h3>
+                <div class="txt-ms">
+                    <p class="card-subtitle">Promova sua marca de forma responsável com nossas placas recicláveis.</p>
+                </div>
+            </div>
+        </div>
 
+        <div>
+
+            <div>
+                <h2 class="minutagem">11 minutos</h2> <!-- maiusculo -->
+                <p class="minutagem-subtitle">É quanto tempo leva em média uma corrida de Uber.</p>
+            </div>
+
+            <div class="grid-container">
+                <img src="./assets/images/publi-product/header-diagonal-far.svg" alt="imagem header">
+
+                <div class="grid-card-container">
+                    <div class="grid-cards">
+                        <img src="./assets/images/icons/visibility.svg" alt=""> <!-- CARROSSEL AQUI JS. -->
+                        <h3 class="grid-title">Maxima visibilidade</h3>
+                        <p class="grid-paragraph">As placas são posicionadas na parte de trás do banco da frente, alinhadas com os olhos do passageiro. O período da viagem proporciona aos passageiros um tempo significativo para se envolver com seu anúncio.</p>
+                    </div> <!-- maiusculo -->
+            
+                    <div class="grid-cards">
+                        <img src="./assets/images/icons/qr_code.svg" alt="">
+                        <h3 class="grid-title">Experiencia Interativas</h3>
+                        <p class="grid-paragraph">Aproveite a tendência do DOOH (digital-out-of-home) móvel. As placas incluem QR codes que direcionam os passageiros, oferecendo a oportunidade de se conectar com sua marca, produtos e até cupons.</p>
+                    </div> <!-- maiusculo -->
+                </div>
+            </div>
+
+            <div class="grid-container performance-grid"> <!-- li de divs ? -->
+                <div class="container-performance-titles">
+                    <h2 class="performance-title">Entenda o desempenho</h2> <!-- maiusculo -->
+                    <div class="performance-subtitle-container">
+                        <p class="performance-subtitle">A Publieasy entrega relatórios de desempenho com métricas essenciais para informar a tomada de decisão.</p>
+                    </div>
+                </div>
+                <div class="container-performance">
+                    <div class="container-card">
+                        <h3 class="container-card-titles">Quilometragem</h3>
+                        <p class="container-card-subtitles">Quanto seu anúncio percorreu ao longo da campanha.</p>
+                    </div>
+                    <div class="container-card">
+                        <h3 class="container-card-titles">Número de corridas</h3>
+                        <p class="container-card-subtitles">Quantas viagens seu anúncio foi veiculado.</p>
+                    </div>
+            
+                    <div class="container-card">
+                        <h3 class="container-card-titles">Acessos</h3>
+                        <p class="container-card-subtitles">Quantos passageiros acessaram seu QR code.</p>
+                    </div>
+            
+                    <div class="container-card">
+                        <h3 class="container-card-titles">Tempo de visualização</h3>
+                        <p class="container-card-subtitles">Tempo médio dos passageiros visualizando seu anúncio.</p>
+                    </div>
+            
+                    <div class="container-card">
+                        <h3 class="container-card-titles">Visualizações</h3>
+                        <p class="container-card-subtitles">Alcance do seu anúncio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-db-sustain"> <!-- grande grid -->
+                <div class="database-info-container">
+                    <div>
+                        <h3 class="database-info-title">30.000</h3>
+                        <p class="database-info-subtitle">quilometros</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="database-info-title">1.200</h3>
+                        <p class="database-info-subtitle">horas</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="database-info-title">4.700</h3>
+                        <p class="database-info-subtitle">viagens</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="database-info-title">8.000</h3>
+                        <p class="database-info-subtitle">pessoas</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="database-info-title">2.600</h3>
+                        <p class="database-info-subtitle">acessos</p>
+                    </div>
+                </div>
+                
+                <div class="db-cards">
+                    <div class="db-container ">
+                        <img src="./assets/images/icons/directions_car.svg" alt="">
+                        <h3 class="db-title">renda para o motorista</h3>
+                        <p class="db-subtitle">Em uma crescente da economia informal, reconhecemos o valor de nossos motoristas parceiros e os colocamos em um papel vital em nossa operação. A oportunidade da renda extra torna a parceria benéfica para todos.</p>
+                    </div>
+
+                    <div class="db-container">
+                        <img src="./assets/images/icons/spa.svg" alt="">
+                        <h3 class="db-title">sustentabilidade</h3>
+                        <p class="db-subtitle">Com a Publieasy, o anunciante vai além do público-alvo, participando também de uma iniciativa sustentável e ecológica. Em nossas placas, utilizamos PVC 100% reciclável e nos comprometemos com o meio ambiente.</p>
+                    </div>
+                </div>
+        </div>
+
+        <div class="grid-container-form" id="quero-anunciar">
+            <div class="left-side-form">
+                <div>
+                    <div>
+                        <h2 class="form-title">anuncie<br>conosco</h2>
+                        <p class="form-subtitle">Preencha o formulário e nossa equipe<br> entrará em contato para discutir as<br> melhores opções para sua campanha.</p>
+                    </div>
+                </div>
+                
+                <div class="form-contacts-below">
+                    <span class="span-form">Já tem uma ideia em mente ou precisa de mais informações imediatamente?</span>
+                    <div class="form-contacts">
+                        <a class="form-contacts-individual" href="mailto:pedro@publieasy.com">pedro@publieasy.com</a>
+                        <a class="form-contacts-individual" href="tel:+558199429-4244">+55 81 99429-4244</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <form name="anuncie-conosco" action="">
+                    <div class="all-forms-inputs">
+                        <div class="forms-inputs-div">
+                            <label class="forms-label" for="email">E-mail</label>
+                            <input class="forms-input" type="email" id="email" placeholder="exemplo@gmail.com">
+                        </div>
+                        
+                        <div class="forms-inputs-div">
+                            <label class="forms-label" for="celular">Celular</label>
+                            <input class="forms-input" type="tel" id="celular" placeholder="Ex: 81 99855 8414">
+                        </div>
+                        
+                        <div class="forms-inputs-div">
+                            <label class="forms-label" for="nome-empresa">Nome da empresa</label>
+                            <input class="forms-input" type="text" id="nome-empresa" placeholder="Ex: Publieasy">
+                        </div>
+                    </div>
+                    
+                    <button class="forms-button" type="submit">Enviar</button>
+                </form>
+            </div>
+            
+            
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container footer">
+            <div class="footer-sm-container"> <!-- sm - social media -->
+                <div class="footer-slogan-container">
+                    <h2 class="footer-slogan">Dirija sua marca<br>até seu cliente.</h2>
+                    <p class="footer-subtitle">Comece a criar impacto e alcance novos<br>horizontes com a Publieasy</p>
+                </div>
+
+                <div class="social-media-container">
+                    <div class="motorista-div">
+                        <a class="motorista" href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank">Sou motorista</a>
+                        <a href="https://forms.gle/A2tpiHFgyftmkmxg7"><img src="assets/images/icons/arrow_outward.svg" alt=""></a>
+                    </div>
+                    <ul class="social-media">
+                        <li><a href="">Facebook</a></li>
+                        <li><span href="">·</span></li>
+                        <li><a href="">Linkedin</a></li>
+                        <li><span href="">·</span></li>
+                        <li><a href="">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-div-span">
+                <li><a href="index.html"><img src="assets/images/publi-logos/publieasy.svg" alt="imagem publieasy logo"></a></li>
+                <div class="footer-span">
+                    <span>2023 © Publieasy · CNPJ 24.988.907/0001-79<br></span>
+                    <span>Rua Padre Roma, 291 · Tamarineira · Recife, PE · 52050-150</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static',filename='assets/js/script.js') }}"></script>
 </body>
+
 </html>
