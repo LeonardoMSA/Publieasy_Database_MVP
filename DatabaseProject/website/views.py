@@ -19,7 +19,7 @@ def index():
         server.starttls()
         server.login("leomenezes12345@gmail.com", "awhq soye muli ddqy ")
         msg_encoded = msg.encode('utf-8')
-        server.sendmail("leomenezes12345@gmail.com", "lfaa2057@gmail.com", msg_encoded)
+        server.sendmail("leomenezes12345@gmail.com", "comercialpublieasy@gmail.com", msg_encoded)
 
 
 
