@@ -23,11 +23,6 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DB_URI"]
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['MAIL_USERNAME'] = os.environ["EMAIL"]
-app.config['MAIL_PASSWORD'] = os.environ["PASSWORD"]
-app.config['MAIL_SERVER'] = "smtp.googlemail.com"
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_PORT'] = 587
 
 Bootstrap(app)
 db.init_app(app)
