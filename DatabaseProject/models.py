@@ -125,5 +125,5 @@ class Count(db.Model):
     accessCount = db.Column(db.Integer)
 
     def __init__(self, accessCount):
-        self.id_count = 0
+        self.id_count = 1
         self.accessCount = accessCount

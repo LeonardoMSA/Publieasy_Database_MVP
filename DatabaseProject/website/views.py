@@ -30,11 +30,13 @@ def index():
 @website.route('/endomarketing')
 def services():
 
-    count = Count.query.get(0)
+    count = Count.query.get(1)
     if count is None:
         count = Count(1)
         db.session.add(count)
         db.session.commit()
+
+    
 
     print(f"{count.accessCount}")
     count.accessCount += 1
