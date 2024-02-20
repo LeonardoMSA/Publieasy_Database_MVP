@@ -1,6 +1,6 @@
 from flask import render_template, url_for, redirect, request, Blueprint, flash
 from DatabaseProject.models import db
-from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato
+from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato, Count
 import smtplib
 import os
 
@@ -27,22 +27,22 @@ def index():
 
     return render_template('index.html', client=client)
 
-# @website.route('/servicos')
-# def services():
+@website.route('/endomarketing')
+def services():
 
-#     count = Count.query.get(0)
-#     if count is None:
-#         count = Count(1)
-#         db.session.add(count)
-#         db.session.commit()
+    count = Count.query.get(0)
+    if count is None:
+        count = Count(1)
+        db.session.add(count)
+        db.session.commit()
 
-#     print(f"{count.accessCount}")
-#     count.accessCount += 1
-#     count1 = count.accessCount
+    print(f"{count.accessCount}")
+    count.accessCount += 1
+    count1 = count.accessCount
 
-#     db.session.commit()
+    db.session.commit()
 
-#     return render_template('services.html', count = count1)
+    return render_template('endomarketing.html', count = count1)
 
 @website.route('/estatistica')
 def statistics():

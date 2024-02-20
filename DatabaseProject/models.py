@@ -117,15 +117,13 @@ class Faturamento(db.Model):
     extraordinarios = db.Column(db.Numeric(10,2))
     poupanca = db.Column(db.Numeric(10,2))
 
+class Count(db.Model):
 
+    __tablename__ = 'Count'
 
-# class Count(db.Model):
+    id_count = db.Column(db.Integer, primary_key=True)
+    accessCount = db.Column(db.Integer)
 
-#     __tablename__ = 'count'
-
-#     id = db.Column(db.Integer, primary_key=True)
-#     accessCount = db.Column(db.Integer)
-
-#     def __init__(self, accessCount):
-#         self.id = 0
-#         self.accessCount = accessCount
+    def __init__(self, accessCount):
+        self.id_count = 0
+        self.accessCount = accessCount
