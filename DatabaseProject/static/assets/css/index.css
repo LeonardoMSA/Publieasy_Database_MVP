@@ -354,6 +354,7 @@ a{
     font-size: 28px;
     font-weight: 500;
     position: relative;
+    text-align: center;
 }
 
 .db-title::after{
@@ -663,3 +664,9 @@ footer::after{
     background: linear-gradient(0deg, var(--cinza-preto-escuro), #000);
 }
 
+.product-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
