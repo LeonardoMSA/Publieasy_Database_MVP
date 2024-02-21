@@ -545,8 +545,10 @@ a{
 .footer-sm-container{
     display: flex;
     padding: 0 80px 100px 80px;
+    margin: 0 auto;
     justify-content: space-between;
     position: relative;
+    max-width: 64%;
 }
 
 .social-media-container{
@@ -600,6 +602,8 @@ a{
     flex-direction: row;
     justify-content: space-between;
     padding: 40px 80px;
+    margin: 0 auto;
+    max-width: 64%;
 }
 
 .footer-span{
@@ -674,11 +678,6 @@ footer::after{
     width: 100%;
     object-fit: cover;
     border-radius: 1rem;
-}
-
-.od-div{
-    display: flex;
-    flex-direction: row;
 }
 
 @media screen and (max-width: 1590px) {
@@ -763,11 +762,6 @@ footer::after{
 
     .left-side-form{
         gap: 40px;
-    }
-
-    .od-div{
-        flex-direction: column;
-        margin: 0 auto
     }
 
     .motorista-div{
