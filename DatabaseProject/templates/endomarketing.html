@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/endomarketing.css') }}">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <script type="text/javascript">
     setTimeout(function() {
         window.location.href = "{{ url_for('website.index') }}";
-    }, 4000);
+    }, 6000);
 </script>
+
 <body>
     <div class="main-container">
-        <h1>{{count}}</h1>
-        <p>Pessoas Acessaram Essa Página</p>
+        <p>Você e mais {{count}} pessoas<br> acessaram esse anúncio!</p>
+    </div>
+    <p class="slogan">Dirigindo sua marca até seu cliente</p>
+    <div class="bottom-container">
+        <img class="logo" src="../static/assets/images/publi-logos/publieasy.svg">
     </div>
 </body>
 </html>

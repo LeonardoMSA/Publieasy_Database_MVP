@@ -36,22 +36,38 @@ html{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-    background-color: var(--roxo);
+    height: 73.5vh;
+    background-color: var(--branco);
     color: var(--off-white);
+}
+
+.bottom-container{
+    width: 100%;
+    height: 20vh;
+    background-color: var(--roxo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 50vh;
+
 }
 
 h1, p {
-    font-family: var(--unbounded);
+    font-family: "Unbounded";
     text-align: center;
-    color: var(--off-white);
-}
-
-h1 {
-    font-size: 10rem; 
-    margin-bottom: 20px; 
 }
 
 p {
-    font-size: 5rem;
+    font-size: 3rem;
+    color: var(--cinza-preto-escuro);
 }
+
+.slogan{
+    margin-bottom: 1.5vh;
+    font-size: 2rem;
+    height: 5vh;
+}
+
