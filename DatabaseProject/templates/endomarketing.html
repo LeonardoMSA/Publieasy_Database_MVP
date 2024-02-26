@@ -8,17 +8,19 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     setTimeout(function() {
         window.location.href = "{{ url_for('website.index') }}";
     }, 6000);
-</script>
+</script> -->
 
 <body>
     <div class="main-container">
         <p>Você e mais {{count}} pessoas<br> acessaram esse anúncio!</p>
     </div>
-    <p class="slogan">Dirigindo sua marca até seu cliente</p>
+    <div class="slogan-container">
+        <p class="slogan">Dirigindo sua marca até seu cliente</p>
+    </div>
     <div class="bottom-container">
         <img class="logo" src="../static/assets/images/publi-logos/publieasy.svg">
     </div>
