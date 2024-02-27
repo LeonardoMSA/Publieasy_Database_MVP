@@ -46,6 +46,7 @@ def services():
 
     return render_template('endomarketing.html', count = count1)
 
+# Fazer login de adm aqui p/ poder ver estatisticas/erp
 @website.route('/estatistica')
 def statistics():
 
