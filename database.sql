@@ -138,3 +138,9 @@ CREATE TABLE `Count`(
   accessCount int,
   CONSTRAINT count_pk PRIMARY KEY (id_count)
 );
+
+CREATE TABLE users(
+    username varchar(15) NOT NULL PRIMARY KEY,
+    email varchar(30),
+    password varchar(30) NOT NULL
+);
