@@ -85,6 +85,9 @@ class QRCode(db.Model):
     id_qrcode = db.Column(db.Integer, primary_key=True, autoincrement=True)
     acessos_total = db.Column(db.Integer)
     acesso_unico = db.Column(db.Integer)
+    imagem_qr = db.Column(db.String(255))
+    link = db.Column(db.String(200))
+    apelido = db.Column(db.String(150))
     id_anuncio = db.Column(db.Integer, db.ForeignKey('Anuncio.id_anuncio'))
 
 class QrCode_Motorista(db.Model):

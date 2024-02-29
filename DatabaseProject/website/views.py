@@ -1,8 +1,11 @@
 from flask import render_template, url_for, redirect, request, Blueprint, flash
 from DatabaseProject.models import db
-from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato, Count
+from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato, Count, QRCode
+from DatabaseProject.forms import AddQrForm
 import smtplib
 import os
+import qrcode
+import shutil
 
 website = Blueprint('website', __name__)
 
@@ -56,3 +59,64 @@ def statistics():
 def contact():
 
     return render_template('contact.html')
+
+@website.route('/testeqr')
+def testeqr():
+
+    qr =qrcode.QRCode(version=1,
+                  error_correction=qrcode.constants.ERROR_CORRECT_L,
+                  box_size=40,
+                  border=1)
+
+    qr.add_data("www.publieasy.com")
+    qr.make(fit=True)
+
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    save_dir = "DatabaseProject/static/uploads"
+
+    os.makedirs(save_dir, exist_ok=True)
+
+    filename = "teste.png"
+
+    destination_path = os.path.join(save_dir, filename)
+    img.save(destination_path)
+
+    return render_template('statistics.html')
+
+@website.route('/addQR', methods=["GET", "POST"])
+def addQR():
+
+    form = AddQrForm()
+
+    if form.validate_on_submit():
+        nomeArquivo = form.apelido.data
+        link = form.apelido.data
+
+        qr =qrcode.QRCode(version=1,
+                  error_correction=qrcode.constants.ERROR_CORRECT_L,
+                  box_size=40,
+                  border=1)
+
+        qr.add_data("www.publieasy.com")
+        qr.make(fit=True)
+
+        img = qr.make_image(fill_color="black", back_color="white")
+
+        save_dir = "DatabaseProject/static/uploads"
+
+        os.makedirs(save_dir, exist_ok=True)
+
+        destination_path = os.path.join(save_dir, nomeArquivo)
+        img.save(destination_path)
+
+        image = url_for('static', filename=f'uploads/{nomeArquivo}')
+
+        qr = QRCode(acessos_total = 0, acesso_unico = 0,imagem_qr = image, link = link)
+
+        db.session.add(qr)
+        db.session.commit()
+
+        return redirect(url_for('website.index'))
+
+    return render_template("addQrCode.html", form=form)
