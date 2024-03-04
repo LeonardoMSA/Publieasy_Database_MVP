@@ -60,30 +60,6 @@ def contact():
 
     return render_template('contact.html')
 
-@website.route('/testeqr')
-def testeqr():
-
-    qr =qrcode.QRCode(version=1,
-                  error_correction=qrcode.constants.ERROR_CORRECT_L,
-                  box_size=40,
-                  border=1)
-
-    qr.add_data("www.publieasy.com")
-    qr.make(fit=True)
-
-    img = qr.make_image(fill_color="black", back_color="white")
-
-    save_dir = "DatabaseProject/static/uploads"
-
-    os.makedirs(save_dir, exist_ok=True)
-
-    filename = "teste.png"
-
-    destination_path = os.path.join(save_dir, filename)
-    img.save(destination_path)
-
-    return render_template('statistics.html')
-
 @website.route('/addQR', methods=["GET", "POST"])
 def addQR():
 
@@ -91,14 +67,14 @@ def addQR():
 
     if form.validate_on_submit():
         nomeArquivo = form.apelido.data
-        link = form.apelido.data
+        link = form.link.data
 
         qr =qrcode.QRCode(version=1,
                   error_correction=qrcode.constants.ERROR_CORRECT_L,
                   box_size=40,
                   border=1)
 
-        qr.add_data("www.publieasy.com")
+        qr.add_data(f"www.publieasy.com/qr_redirect/{nomeArquivo}")
         qr.make(fit=True)
 
         img = qr.make_image(fill_color="black", back_color="white")
@@ -112,11 +88,27 @@ def addQR():
 
         image = url_for('static', filename=f'uploads/{nomeArquivo}')
 
-        qr = QRCode(acessos_total = 0, acesso_unico = 0,imagem_qr = image, link = link)
+        qr1 = QRCode(acessos_total = 0, acesso_unico = 0,imagem_qr = image, apelido = nomeArquivo, link = link)
 
-        db.session.add(qr)
+        print(qr1.id_qrcode)
+
+        db.session.add(qr1)
         db.session.commit()
 
         return redirect(url_for('website.index'))
 
     return render_template("addQrCode.html", form=form)
+
+
+@website.route('/qr_redirect/<nick>')
+def qr_redirect(nick):
+
+    print(f"\n\n{nick}\n\n")
+
+    qr = QRCode.query.filter_by(apelido = nick).first()
+
+    qr.acessos_total += 1
+    db.session.commit()
+
+    return redirect(f"{qr.link}", code=302)
+
