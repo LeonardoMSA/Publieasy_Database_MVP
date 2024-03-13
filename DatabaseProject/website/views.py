@@ -66,9 +66,7 @@ def addQR():
     form = AddQrForm()
 
     if form.validate_on_submit():
-        nomeArquivo = form.nome_arquivo.data
-        apelido = form.apelido.data
-        anunciante = form.anunciante.data
+        nomeArquivo = form.apelido.data
         link = form.link.data
 
         qr =qrcode.QRCode(version=1,
@@ -76,7 +74,7 @@ def addQR():
                   box_size=40,
                   border=1)
 
-        qr.add_data(f"www.publieasy.com/qr_redirect/{apelido}")
+        qr.add_data(f"www.publieasy.com/qr_redirect/{nomeArquivo}")
         qr.make(fit=True)
 
         img = qr.make_image(fill_color="black", back_color="white")
@@ -90,8 +88,7 @@ def addQR():
 
         image = url_for('static', filename=f'uploads/{nomeArquivo}')
 
-        qr1 = QRCode(acessos_total = 0, acesso_unico = 0,imagem_qr = image, nome_arquivo = nomeArquivo,
-                     apelido = apelido, anunciante = anunciante, link = link)
+        qr1 = QRCode(acessos_total = 0, acesso_unico = 0,imagem_qr = image, apelido = nomeArquivo, link = link)
 
         print(qr1.id_qrcode)
 
@@ -105,6 +102,8 @@ def addQR():
 
 @website.route('/qr_redirect/<nick>')
 def qr_redirect(nick):
+
+    print(f"\n\n{nick}\n\n")
 
     qr = QRCode.query.filter_by(apelido = nick).first()
 
