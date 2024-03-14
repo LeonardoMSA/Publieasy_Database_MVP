@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, request, Blueprint, flash
 from DatabaseProject.models import db
 from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato, Count, QRCode
-from DatabaseProject.forms import AddQrForm
+#from DatabaseProject.forms import AddQrForm
 import smtplib
 import os
 import qrcode
