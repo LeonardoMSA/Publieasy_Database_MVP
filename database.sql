@@ -134,7 +134,7 @@ CONSTRAINT faturamento_pk PRIMARY KEY (id_faturamento)
 );
 
 CREATE TABLE `Count`(
-  id_count int,
-  accessCount int,
-  CONSTRAINT count_pk PRIMARY KEY (id_count)
+id_count int,
+accessCount int,
+CONSTRAINT count_pk PRIMARY KEY (id_count)
 );
