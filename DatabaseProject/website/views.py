@@ -1,10 +1,10 @@
 from flask import render_template, url_for, redirect, request, Blueprint, flash
 from DatabaseProject.models import db
-from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato, Count
-#from DatabaseProject.forms import AddQrForm
+from DatabaseProject.models import Motorista, Anuncio, Cliente, Contrato, Count, QRCode
+from DatabaseProject.forms import AddQrForm
 import smtplib
 import os
-#import qrcode
+import qrcode
 import shutil
 
 website = Blueprint('website', __name__)
@@ -60,55 +60,56 @@ def contact():
 
     return render_template('contact.html')
 
-# @website.route('/addQR', methods=["GET", "POST"])
-# def addQR():
+@website.route('/addQR', methods=["GET", "POST"])
+def addQR():
 
-#     form = AddQrForm()
+    form = AddQrForm()
 
-#     if form.validate_on_submit():
-#         nomeArquivo = form.apelido.data
-#         link = form.link.data
+    if form.validate_on_submit():
+        apelido = form.apelido.data
+        nomeArquivo = form.nomeArquivo.data
+        link = form.link.data
+        anunciante = form.anunciante.data
 
-#         qr =qrcode.QRCode(version=1,
-#                   error_correction=qrcode.constants.ERROR_CORRECT_L,
-#                   box_size=40,
-#                   border=1)
+        qr =qrcode.QRCode(version=1,
+                  error_correction=qrcode.constants.ERROR_CORRECT_L,
+                  box_size=40,
+                  border=1)
 
-#         qr.add_data(f"www.publieasy.com/qr_redirect/{nomeArquivo}")
-#         qr.make(fit=True)
+        qr.add_data(f"www.publieasy.com/qr_redirect/{apelido}")
+        qr.make(fit=True)
 
-#         img = qr.make_image(fill_color="black", back_color="white")
+        img = qr.make_image(fill_color="black", back_color="white")
 
-#         save_dir = "DatabaseProject/static/uploads"
+        save_dir = "DatabaseProject/static/uploads"
 
-#         os.makedirs(save_dir, exist_ok=True)
+        os.makedirs(save_dir, exist_ok=True)
 
-#         destination_path = os.path.join(save_dir, nomeArquivo)
-#         img.save(destination_path)
+        destination_path = os.path.join(save_dir, nomeArquivo)
+        img.save(destination_path)
 
-#         image = url_for('static', filename=f'uploads/{nomeArquivo}')
+        image = url_for('static', filename=f'uploads/{nomeArquivo}')
 
-#         qr1 = QRCode(acessos_total = 0, acesso_unico = 0,imagem_qr = image, apelido = nomeArquivo, link = link)
+        qr1 = QRCode(acessos_total = 0, acesso_unico = 0,imagem_qr = image, apelido = apelido,
+                      nome_arquivo = nomeArquivo, link = link, anunciante = anunciante)
 
-#         print(qr1.id_qrcode)
+        db.session.add(qr1)
+        db.session.commit()
 
-#         db.session.add(qr1)
-#         db.session.commit()
+        qr2 = QRCode.query.filter_by(apelido = apelido).first()
 
-#         return redirect(url_for('website.index'))
+        return redirect(url_for('website.index'))
 
-#     return render_template("addQrCode.html", form=form)
+    return render_template("addQrCode.html", form=form)
 
 
-# @website.route('/qr_redirect/<nick>')
-# def qr_redirect(nick):
+@website.route('/qr_redirect/<nick>')
+def qr_redirect(nick):
 
-#     print(f"\n\n{nick}\n\n")
+    qr = QRCode.query.filter_by(apelido = nick).first()
 
-#     qr = QRCode.query.filter_by(apelido = nick).first()
+    qr.acessos_total += 1
+    db.session.commit()
 
-#     qr.acessos_total += 1
-#     db.session.commit()
-
-#     return redirect(f"{qr.link}", code=302)
+    return redirect(f"{qr.link}", code=302)
 

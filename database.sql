@@ -93,6 +93,11 @@ CREATE TABLE QRCode(
 id_qrcode int AUTO_INCREMENT,
 acessos_total int,
 acesso_unico int,
+imagem_qr varchar(255),
+link varchar(200),
+nome_arquivo varchar(150),
+apelido varchar(150),
+anunciante varchar(150),
 id_anuncio int,
 CONSTRAINT qrcode_pk PRIMARY KEY (id_qrcode),
 CONSTRAINT id_anuncio_fk_qr FOREIGN KEY (id_anuncio) REFERENCES Anuncio (id_anuncio)
