@@ -13,3 +13,4 @@ Flask-Bootstrap
 Flask-WTF
 SQLAlchemy
 PyMySQL
+qrcode
