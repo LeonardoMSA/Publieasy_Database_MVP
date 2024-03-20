@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publieasy</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/index.css') }}">
+    <link rel="stylesheet" href="../static/assets/css/index.css">
     <link rel="shortcut icon" href="../static/assets/images/publi-logos/favicon.ico" type="image/x-icon">
-    
 </head>
 <body>
 
     <header>
         <nav class="container">
             <ul class="navigation">
-                <li><a href="/"><img src="../static/assets/images/publi-logos/publieasy.svg" alt="imagem publieasy logo"></a></li>
+                <li><a href="/"><img src="../static/assets/images/publi-logos/publieasy.svg" alt="imagem publieasy logo" width="150" height="50"></a></li>
                 <li>
                     <div class="motorista-div">
                         <a class="motorista" href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank">Sou motorista</a>
-                        <a href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank"><img src="../static/assets/images/icons/arrow_outward.svg" alt=""></a>
+                        <a href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank"><img src="../static/assets/images/icons/arrow_outward.svg" alt="Seta apontando para fora" width="24" height="24"></a>
                     </div>
                 </li>
             </ul>
@@ -35,7 +35,7 @@
         <div class="horizontal-cards-container"> <!-- maiusculo -->
             
             <div class="cards-container">
-                <img class="imgs-card" src="../static/assets/images/icons/directions_car.svg" alt="">
+                <img class="imgs-card" src="../static/assets/images/icons/directions_car.svg" alt="ícone de carrinho">
                 <h3 class="card-titles">Alcance local e direcionado</h3>
                 <div class="txt-ms">
                     <p class="card-subtitle">Seja visto por clientes locais e direcione sua mensagem para o público certo, no momento certo.</p>
@@ -43,7 +43,7 @@
             </div>
             
             <div class="cards-container">
-                <img class="imgs-card" src="../static/assets/images/icons/spa.svg" alt="">
+                <img class="imgs-card" src="../static/assets/images/icons/spa.svg" alt="ícone de flor calma">
                 <h3 class="card-titles">Impacto sustentável</h3>
                 <div class="txt-ms">
                     <p class="card-subtitle">Promova sua marca de forma responsável com nossas placas recicláveis.</p>
@@ -51,24 +51,24 @@
             </div>
             
             <div class="cards-container">
-                <img class="imgs-card" src="../static/assets/images/icons/language.svg" alt="">
+                <img class="imgs-card" src="../static/assets/images/icons/language.svg" alt="ícone de globo conectado">
                 <h3 class="card-titles">Interação instântanea</h3>
                 <div class="txt-ms">
                     <p class="card-subtitle">Promova sua marca de forma responsável com nossas placas recicláveis.</p>
                 </div>
             </div>
         </div>
-
+        
         <div>
-
+            
             <div>
                 <h2 class="minutagem">11 minutos</h2> <!-- maiusculo -->
                 <p class="minutagem-subtitle">É quanto tempo leva em média uma corrida de Uber.</p>
             </div>
-
+            
             <div class="grid-container">
                 <img class="product-image" src="../static/assets/images/publi-product/header-diagonal-close.svg" alt="imagem header">
-
+                
                 <div class="grid-card-container">
                     <div class="grid-cards">
                         <img src="../static/assets/images/icons/visibility.svg" alt=""> <!-- CARROSSEL AQUI JS. -->
@@ -83,7 +83,7 @@
                     </div> <!-- maiusculo -->
                 </div>
             </div>
-
+            
             <div class="grid-container performance-grid"> <!-- li de divs ? -->
                 <div class="container-performance-titles">
                     <h2 class="performance-title">Entenda o desempenho</h2> <!-- maiusculo -->
@@ -100,12 +100,12 @@
                         <h3 class="container-card-titles">Número de corridas</h3>
                         <p class="container-card-subtitles">Quantas viagens seu anúncio foi veiculado.</p>
                     </div>
-            
+                    
                     <div class="container-card">
                         <h3 class="container-card-titles">Acessos</h3>
                         <p class="container-card-subtitles">Quantos passageiros acessaram seu QR code.</p>
                     </div>
-            
+                    
                     <div class="container-card">
                         <h3 class="container-card-titles">Tempo de visualização</h3>
                         <p class="container-card-subtitles">Tempo médio dos passageiros visualizando seu anúncio.</p>
@@ -153,23 +153,23 @@
                         <h3 class="db-title">renda para o motorista</h3>
                         <p class="db-subtitle">Em uma crescente da economia informal, reconhecemos o valor de nossos motoristas parceiros e os colocamos em um papel vital em nossa operação. A oportunidade da renda extra torna a parceria benéfica para todos.</p>
                     </div>
-
+                    
                     <div class="db-container">
                         <img src="../static/assets/images/icons/spa.svg" alt="">
                         <h3 class="db-title">sustentabilidade</h3>
                         <p class="db-subtitle">Com a Publieasy, o anunciante vai além do público-alvo, participando também de uma iniciativa sustentável e ecológica. Em nossas placas, utilizamos PVC 100% reciclável e nos comprometemos com o meio ambiente.</p>
                     </div>
                 </div>
-        </div>
-
-        <div class="grid-container-form" id="quero-anunciar">
-            <div class="left-side-form">
-                <div>
+            </div>
+            
+            <div class="grid-container-form" id="quero-anunciar">
+                <div class="left-side-form">
                     <div>
-                        <h2 class="form-title">anuncie<br>conosco</h2>
-                        <p class="form-subtitle">Preencha o formulário e nossa equipe<br> entrará em contato para discutir as<br> melhores opções para sua campanha.</p>
+                        <div>
+                            <h2 class="form-title">anuncie<br>conosco</h2>
+                            <p class="form-subtitle">Preencha o formulário e nossa equipe<br> entrará em contato para discutir as<br> melhores opções para sua campanha.</p>
+                        </div>
                     </div>
-                </div>
                 
                 <div class="form-contacts-below">
                     <span class="span-form">Já tem uma ideia em mente ou precisa de mais informações imediatamente?</span>
@@ -205,7 +205,7 @@
             
             
         </div>
-
+        
     </main>
 
     <footer>
@@ -218,7 +218,7 @@
                 <div class="social-media-container">
                     <div class="motorista-div">
                         <a class="motorista" href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank">Sou motorista</a>
-                        <a href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank"><img src="../static/assets/images/icons/arrow_outward.svg" alt=""></a>
+                        <a href="https://forms.gle/A2tpiHFgyftmkmxg7" target="_blank"><img src="../static/assets/images/icons/arrow_outward.svg" alt="Seta apontando para fora"></a>
                     </div>
                     <ul class="social-media">
                         <li><a href="" target="_blank">Facebook</a></li>
@@ -239,8 +239,9 @@
             </div>
         </div>
     </footer>
-
-    <script src="{{ url_for('static',filename='assets/js/script.js') }}"></script>
+    
+    <!-- <script src="{{ url_for('static',filename='assets/js/script.js') }}"></script> -->
+    <script src="../static/assets/js/script.js"></script>
 </body>
 
 </html>

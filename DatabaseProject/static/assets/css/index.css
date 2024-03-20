@@ -60,6 +60,7 @@ a{
     font-size: var(--titulo-28);
     font-weight: bold;
     color: var(--lima);
+    white-space: nowrap;
     font-family: "Inter", sans-serif;   
 }
 
@@ -700,7 +701,7 @@ footer::after{
 @media screen and (max-width: 1100px) {
 
     :root{
-        font-size: 9px;
+        font-size: 11px;
     }
 
     .performance-grid{
@@ -779,7 +780,7 @@ footer::after{
     }
 
     .navigation img{
-        max-width: 142px;
+        max-width: 140px;
     }
 
     .footer-span{
@@ -814,7 +815,7 @@ footer::after{
     }
     .container{
         max-width: 100% !important;
-        margin: 0 1.25rem 3.75rem;;
+        margin: 0 20px 60px 20px;
     }
     .navigation{
         gap: 2.5rem;
@@ -834,5 +835,46 @@ footer::after{
 
     .slogan-title{
         text-align: left;
+        font-size: 32px;
+    }
+    
+    .sub-slogan{
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .card-subtitle, .grid-paragraph{
+        font-size: 1.45rem;
+    }
+
+    .horizontal-cards-container{
+        margin-bottom: 100px;
+    }
+
+    .grid-title{
+        font-size: 20px;
+    }
+ 
+    .performance-title, .performance-subtitle, .container-performance{
+        text-align: left;
+        margin: 0 20px;
+    }
+
+    .performance-subtitle{
+        padding: 0;
+    }
+    
+    .container-performance{
+        margin-top: 40px;
+        
+    }
+
+    .container-card-subtitles{
+        font-size: 16px;
+    }
+    
+    .grid-container{
+        margin: 60px 0;
+        
     }
 }
