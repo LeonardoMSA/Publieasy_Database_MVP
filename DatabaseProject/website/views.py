@@ -23,6 +23,7 @@ def index():
         server.login("leomenezes12345@gmail.com", "awhq soye muli ddqy ")
         msg_encoded = msg.encode('utf-8')
         server.sendmail("leomenezes12345@gmail.com", "comercialpublieasy@gmail.com", msg_encoded)
+        flash(f"E-mail enviado com sucesso, {nomeEmpresa}", category="success")
 
 
 
